@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+# Run test.sh
 sh test.sh
 
+# Install gocov and gocov-xml
 go install github.com/axw/gocov/gocov@latest
 go install github.com/AlekSi/gocov-xml@latest
 
@@ -14,6 +16,7 @@ echo "mode: set" >./coverage/coverage.out && cat ./coverage/*.out | grep -v mode
 go tool cover -func=./coverage/coverage.out
 gocov convert ./coverage/coverage.out | gocov-xml >./coverage/coverage.xml
 
+# Set CODACY_PROJECT_TOKEN for Codacy coverage reporting
 export CODACY_PROJECT_TOKEN=7773cb72b96d410998813a5b5d8c41fc
 
 echo Sending codacy coverage
@@ -21,4 +24,5 @@ printf "The codacy project token is $CODACY_PROJECT_TOKEN\n"
 
 printf "\033[32mSENDING COVERAGE REPORTS\033[0m\n"
 
+# Run Codacy coverage reporting script
 bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r coverage/coverage.xml
