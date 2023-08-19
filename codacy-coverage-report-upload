@@ -8,11 +8,11 @@ go install github.com/AlekSi/gocov-xml@latest
 set -xe
 
 # Code Coverage + Convert to XML
-echo "mode: set" > ./coverage/coverage.out && cat ./coverage/*.out | grep -v mode: | sort -r | \
-awk '{if($1 != last) {print $0;last=$1}}' >> ./coverage/coverage.out
+echo "mode: set" >./coverage/coverage.out && cat ./coverage/*.out | grep -v mode: | sort -r |
+    awk '{if($1 != last) {print $0;last=$1}}' >>./coverage/coverage.out
 
 go tool cover -func=./coverage/coverage.out
-gocov convert ./coverage/coverage.out | gocov-xml > ./coverage/coverage.xml
+gocov convert ./coverage/coverage.out | gocov-xml >./coverage/coverage.xml
 
 export CODACY_PROJECT_TOKEN=7773cb72b96d410998813a5b5d8c41fc
 
