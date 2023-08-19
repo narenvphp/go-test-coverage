@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="1" branch-rate="0" lines-covered="7" lines-valid="7" branches-covered="0" branches-valid="0" complexity="0" version="" timestamp="1692418524561">
+<coverage line-rate="1" branch-rate="0" lines-covered="7" lines-valid="7" branches-covered="0" branches-valid="0" complexity="0" version="" timestamp="1692419240881">
 	<packages>
 		<package name="github.com/narenvphp/go-test-coverage/size" line-rate="1" branch-rate="0" complexity="0" line-count="7" line-hits="7">
 			<classes>
